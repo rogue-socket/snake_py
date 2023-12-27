@@ -43,10 +43,8 @@ while game_is_on:
         scrbd.game_over()
 
     # Tail Collision
-    for segment in tim.segments:
-        if segment == tim.head:
-            pass
-        elif tim.head.distance(segment) < 10:
+    for i, segment in enumerate(tim.segments[1:]):
+        if tim.head.distance(segment) < 10:
             game_is_on = False
             scrbd.game_over()
 
